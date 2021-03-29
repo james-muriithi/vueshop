@@ -25,13 +25,8 @@ export default {
   methods: {
     addToCart() {
       this.$store.dispatch('addProductToCart', {
-        product: {
-          id: this.id,
-          image: this.image,
-          title: this.title,
-          price: this.price,
-        },
-      });
+          id: this.id
+        });
     },
   },
 };

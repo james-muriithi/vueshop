@@ -40,7 +40,9 @@ const cartModule = {
   },
   actions: {
     addProductToCart(context, payload) {
-      context.commit('addProductToCart', payload);
+      const products = context.rootGetters.products;
+      const product = products.find(prod => prod.id == payload.id)
+      context.commit('addProductToCart', {product});
     },
     removeProductFromCart(context, payload) {
       context.commit('removeProductFromCart', payload);
